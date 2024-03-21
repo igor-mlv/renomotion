@@ -17,17 +17,18 @@ export default function NavBar() {
                         </div>
                         <ul className="flex items-center space-x-8">
                             {navbarLinks.map((link: { id: string, title: string }, index) => (
-                                <li key={link.id} className={`navbarLink ${index === navbarLinks.length - 1 ? 'pr-0' : 'pr-6'}`}>
-                                    <a href={`#${link.id}`}>
-                                        {link.title}
-                                    </a>
+                                <li key={`link.id}`} className={`${styles.flexCenter}`}>
+                                    <Button variant="link" className={`navbarLink ${index === navbarLinks.length - 1 ? 'mr-0' : 'mr-1'}`}>
+                                        <a href={`#${link.id}`}>
+                                            {link.title}
+                                        </a>
+                                    </Button>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </div>
             </div>
-            <Button >Hello</Button>
         </nav>
     );
 }

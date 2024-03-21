@@ -9,7 +9,7 @@ h1 {
 }
 
 .navbarLink {
-  @apply font-noto xs:text-[1.75rem] text-[1.5rem] text-gold border-2 border-transparent hover:border-gold
+  @apply font-noto xs:text-[1.75rem] text-[1.5rem] text-gold
 }
 
 
