@@ -7,11 +7,28 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "480px",
+      ss: "620px",
+      sm: "768px",
+      md: "1060px",
+      lg: "1200px",
+      xl: "1700px",
+    },
+    fontFamily: {
+      montserrat: ["Montserrat", "sans-serif"],
+      noto: ["Noto Sans Lao Looped", "sans-serif"],
+    },
+    fontWeight: {
+      normal: '400',
+      bold: '700',
+    },
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'root-pattern': "url('/assets/root-bg.png')",
+      },
+      colors: {
+        'gold': '#DCBF77',
       },
     },
   },
