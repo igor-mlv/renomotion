@@ -9,11 +9,15 @@
 }
 
 h1 {
-  @apply font-montserrat font-bold xs:text-[3rem] text-[2.25rem] xs:leading-normal leading-normal w-full text-black
+  @apply font-montserrat font-bold md:text-[3rem] text-[2.25rem] leading-[3.25rem] text-black md:text-left text-center
 }
 
 .navbarLink {
   @apply font-noto xs:text-[1.75rem] text-[2rem] text-gold
+}
+
+.btnText {
+  @apply font-montserrat font-normal text-[1.2rem] text-black
 }
 
 

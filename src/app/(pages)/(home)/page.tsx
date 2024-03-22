@@ -1,10 +1,12 @@
+import Hero from "@/components/sections/Hero";
 import NavBar from "@/components/sections/NavBar"
 
 export default function Home() {
   return (
-    <div className="w-full overflow-hidden bg-root-pattern">
+    <div className="w-full overflow-hidden bg-root-pattern min-w-[390px]">
 
       <NavBar />
+      <Hero />
 
       <section id="about" className="h-[2000px] pt-[5rem]">
         <h1>hi</h1>

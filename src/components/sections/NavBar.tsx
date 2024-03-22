@@ -13,7 +13,7 @@ import {
 
 export default function NavBar() {
     return (
-        <nav>
+        <nav className="h-[70px]">
             <div className="flex justify-center items-center mt-[3rem]">
                 <div className=" fixed lg:max-w-[1280px] w-full">
                     <div className="flex justify-between items-center py-4 px-6">
@@ -26,7 +26,7 @@ export default function NavBar() {
                         </div>
 
                         <ul className="hidden md:flex items-center space-x-6">
-                            {navbarLinks.map((link: { id: string, title: string }, index) => (
+                            {navbarLinks.map((link: { id: string, title: string, }, index) => (
                                 <li key={`${link.id}`} className="flex justify-center items-center">
                                     <Button variant="link" className={`navbarLink ${index === navbarLinks.length - 1 ? 'mr-0' : 'mr-1'}`}>
                                         <a href={`#${link.id}`}>
