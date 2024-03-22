@@ -11,8 +11,8 @@ const config: Config = {
       xs: "480px",
       ss: "620px",
       sm: "768px",
-      md: "1060px",
-      lg: "1200px",
+      md: "1180px",
+      lg: "1280px",
       xl: "1700px",
     },
     fontFamily: {

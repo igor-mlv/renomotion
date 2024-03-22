@@ -4,12 +4,16 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+* {
+  scroll-behavior: smooth;
+}
+
 h1 {
   @apply font-montserrat font-bold xs:text-[3rem] text-[2.25rem] xs:leading-normal leading-normal w-full text-black
 }
 
 .navbarLink {
-  @apply font-noto xs:text-[1.75rem] text-[1.5rem] text-gold
+  @apply font-noto xs:text-[1.75rem] text-[2rem] text-gold
 }
 
 
