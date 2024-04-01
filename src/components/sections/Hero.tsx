@@ -11,11 +11,11 @@ import { Button } from "../ui/button"
 
 export default function Hero() {
     return (
-        <section id="hero" className=" flex md:justify-center  justify-start items-center md:h-[80vh] h-[70vh] max-h-[650px]">
+        <section id="hero" className=" flex justify-center items-center md:h-[80vh] h-[70vh] max-h-[650px]">
             <div className="lg:max-w-[1280px] w-full px-2">
                 <Carousel>
                     <CarouselContent>
-                        {heroSectionCards.map((card: { id: number, heading: string, btnText: string }, index) => (
+                        {heroSectionCards.map((card: { id: number, heading: string, btnText: string, imgUrl: string }, index) => (
                             <CarouselItem key={card.id}>
                                 <div className="flex md:flex-row flex-col-reverse justify-between items-center min-h-[450px]">
                                     <div className="flex flex-col justify-around h-[200px] md:items-start items-center">
@@ -25,10 +25,8 @@ export default function Hero() {
                                         </Button>
                                     </div>
                                     <img
-                                        src={`https://picsum.photos/800/400?random=${index}`}
-                                        className="w-[100%] h-auto object-cover rounded-[40px] md:max-w-none max-w-[840px] min-h-[240px]"
-                                        width="870"
-                                        height="440"
+                                        src={card.imgUrl}
+                                        className="rounded-[40px] md:max-w-[100%] max-w-[50%] min-w-[370px] w-[1200px] h-auto max-h-[500px]"
                                         alt=""
                                     />
                                 </div>

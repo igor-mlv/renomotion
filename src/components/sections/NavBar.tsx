@@ -14,8 +14,8 @@ import {
 export default function NavBar() {
     return (
         <nav className="h-[70px]">
-            <div className="flex justify-center items-center mt-[3rem]">
-                <div className=" fixed lg:max-w-[1280px] w-full">
+            <div className="flex justify-center items-center mt-[35px]">
+                <div className=" fixed lg:max-w-[1280px] w-full bg-root-pattern z-10">
                     <div className="flex justify-between items-center py-4 px-6">
                         <div>
                             <img
