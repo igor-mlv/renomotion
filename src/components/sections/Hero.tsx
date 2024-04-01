@@ -27,7 +27,7 @@ export default function Hero() {
                                     <img
                                         src={card.imgUrl}
                                         className="rounded-[40px] md:max-w-[100%] max-w-[50%] min-w-[370px] w-[1200px] h-auto max-h-[500px]"
-                                        alt=""
+                                        alt={card.heading}
                                     />
                                 </div>
                             </CarouselItem>

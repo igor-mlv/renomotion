@@ -12,6 +12,14 @@ h1 {
   @apply font-montserrat font-bold md:text-[3rem] text-[2.25rem] leading-[3.25rem] text-black md:text-left text-center
 }
 
+h2 {
+  @apply font-montserrat font-bold md:text-[3rem] text-[2.25rem] leading-[3.25rem] text-black text-center
+}
+
+p {
+  @apply font-montserrat font-normal md:text-[1.3rem] text-[1.5rem] text-black
+}
+
 .navbarLink {
   @apply font-noto xs:text-[1.75rem] text-[2rem] text-gold
 }
