@@ -16,6 +16,10 @@ h2 {
   @apply font-montserrat font-bold md:text-[3rem] text-[2.25rem] leading-[3.25rem] text-black text-center
 }
 
+h3 {
+  @apply font-montserrat font-bold md:text-[2.5rem] text-[2.1rem] md:leading-[3.25rem] leading-[2.9rem] text-black text-center
+}
+
 p {
   @apply font-montserrat font-normal md:text-[1.3rem] text-[1.5rem] text-black
 }

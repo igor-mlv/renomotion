@@ -15,7 +15,7 @@ export default function Hero() {
             <div className="lg:max-w-[1280px] w-full px-2">
                 <Carousel>
                     <CarouselContent>
-                        {heroSectionCards.map((card: { id: number, heading: string, btnText: string, imgUrl: string }, index) => (
+                        {heroSectionCards.map((card: { id: number, heading: string, btnText: string, imgUrl: string }) => (
                             <CarouselItem key={card.id}>
                                 <div className="flex md:flex-row flex-col-reverse justify-between items-center min-h-[450px]">
                                     <div className="flex flex-col justify-around h-[200px] md:items-start items-center">

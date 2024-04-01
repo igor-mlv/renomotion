@@ -1,6 +1,7 @@
 import About from "@/components/sections/About";
 import Hero from "@/components/sections/Hero";
 import NavBar from "@/components/sections/NavBar"
+import Services from "@/components/sections/Services";
 
 export default function Home() {
   return (
@@ -8,13 +9,12 @@ export default function Home() {
       <NavBar />
       <Hero />
       <About />
+      <Services />
 
-      <section id="about" className="h-[2000px] pt-[5rem]">
-        <h1>hi</h1>
-      </section>
 
-      <section id="services" className="h-[2000px] pt-[5rem]">
-        <h1>hi services</h1>
+
+      <section id="footer" className="h-[2000px] pt-[5rem]">
+        <h1>footer</h1>
       </section>
 
     </div >
