@@ -6,6 +6,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "../ui/button"
+import Image from 'next/image'
 
 export default function Prices() {
     return (
@@ -15,15 +16,19 @@ export default function Prices() {
                 <div className="bg-gold w-[200px] h-[4px] mx-auto"></div>
 
                 <Accordion type="single" collapsible>
-                    {cards.map((card: { id: number, triggerText: string, heading: string, bulletList: string[], note: string, price: string, btnText: string, imgUrl: string }) => (
+                    {cards.map((card: { id: number, triggerText: string, heading: string, bulletList: string[], note: string, price: string, btnText: string, imgUrl: string, skeletonImgUrl: string }) => (
                         <AccordionItem key={card.id} value={card.triggerText} className="border-b-2 border-black">
                             <AccordionTrigger><h4>{card.triggerText}</h4></AccordionTrigger>
                             <AccordionContent>
                                 <div className="flex md:flex-row flex-col justify-between md:items-start items-center">
-                                    <img
+                                    <Image
                                         src={card.imgUrl}
-                                        className="w-500 h-500 rounded-[60px]"
-                                        alt="Bathroom Renovations"
+                                        alt="Picture of the author"
+                                        width={600}
+                                        height={600}
+                                        className="rounded-[60px]"
+                                        placeholder="blur"
+                                        blurDataURL={card.skeletonImgUrl}
                                     />
 
                                     <div className="flex flex-col w-auto max-w-[600px] justify-start pt-[20px] px-[20px]">

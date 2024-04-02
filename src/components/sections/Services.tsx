@@ -12,7 +12,7 @@ export default function Services() {
                         <div key={card.id} className="flex flex-col items-center pb-[100px]">
                             <img
                                 src={card.imgUrl}
-                                className="w-[350px] h-[400px] object-cover rounded-[40px]"
+                                className="w-[350px] h-[450px] object-cover rounded-[40px]"
                                 alt="Bathroom Renovations"
                             />
 
