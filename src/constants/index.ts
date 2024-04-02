@@ -62,3 +62,38 @@ export const servicesSectionCards = [
         imgUrl: "./assets/servicesSection/services-basement.png",
     },
 ];
+
+export const pricesSectionCards = [
+    {
+        id: 1,
+        triggerText: "3-Piece Bathroom",
+        heading: "Included in 3-Piece Bathroom Renovation:",
+        bulletList: [
+            "Plumbing adjustments and installation of tub/shower",
+            "Waterproofing",
+            "Tiling on walls and floor",
+            "Drywall work and painting",
+            "Fitting toilet, vanity, wall accessories, and trim.",
+        ],
+        note: "Please Note: Finish materials such as sinks, faucets, tiles, vanities, and toilets are to be supplied by you, allowing customization to match your style",
+        price: "Starting from $11,900",
+        btnText: "Get a Quote",
+        imgUrl: "./assets/pricesSection/prices-3pc.png",
+    },
+    {
+        id: 2,
+        triggerText: "4-Piece Bathroom",
+        heading: "Included in 3-Piece Bathroom Renovation:",
+        bulletList: [
+            "Plumbing adjustments and installation of tub/shower",
+            "Waterproofing",
+            "Tiling on walls and floor",
+            "Drywall work and painting",
+            "Fitting toilet, vanity, wall accessories, and trim.",
+        ],
+        note: "Please Note: Finish materials such as sinks, faucets, tiles, vanities, and toilets are to be supplied by you, allowing customization to match your style",
+        price: "Starting from $11,900",
+        btnText: "Get a Quote",
+        imgUrl: "./assets/pricesSection/prices-3pc.png",
+    },
+];

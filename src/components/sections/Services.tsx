@@ -7,9 +7,9 @@ export default function Services() {
                 <h2 className=" text-center mb-1">Services We Offer</h2>
                 <div className="bg-gold w-[200px] h-[4px] mx-auto"></div>
 
-                <div className="flex md:flex-row flex-col justify-between md:items-start items-center mt-[50px] md:h-[650px] h-[2300px]">
+                <div className="flex md:flex-row flex-col justify-between md:items-start items-center mt-[50px] ">
                     {cards.map((card: { id: number, heading: string, description: string, imgUrl: string }) => (
-                        <div key={card.id} className="flex flex-col items-center pb-[50px]">
+                        <div key={card.id} className="flex flex-col items-center pb-[100px]">
                             <img
                                 src={card.imgUrl}
                                 className="w-[350px] h-[400px] object-cover rounded-[40px]"
