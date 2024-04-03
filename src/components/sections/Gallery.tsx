@@ -13,6 +13,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 
+
 export default function Gallery() {
 
     return (
@@ -62,10 +63,10 @@ export default function Gallery() {
 
                 {/* For mobile version */}
                 <div className="md:hidden flex justify-center items-center mt-[50px]">
-                    <Carousel className="w-full max-w-xs">
-                        <CarouselContent>
+                    <Carousel orientation="vertical" className="w-full max-w-xs">
+                        <CarouselContent className="max-h-[550px]">
                             {cards.map((card: { id: number, title: string, imgUrl: string, skeletonImgUrl: string }) => (
-                                <CarouselItem key={card.id}>
+                                <CarouselItem key={card.id} className="py-[30px]">
                                     <div className="w-full h-[500px] relative">
                                         {/* When use fill prop it changes position to absolut! */}
                                         <Image
@@ -81,8 +82,9 @@ export default function Gallery() {
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
+                        <CarouselNext variant="link" className="h-10 w-[75px] rounded-full rotate-0 pt-[100px]">
+                            <img src="/assets/arrow-down.svg" className="animate-bounce" alt="Arrow Down" />
+                        </CarouselNext>
                     </Carousel>
                 </div>
             </div>
