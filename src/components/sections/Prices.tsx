@@ -15,7 +15,7 @@ export default function Prices() {
                 <h2 className=" text-center mb-1">Our Prices</h2>
                 <div className="bg-gold w-[200px] h-[4px] mx-auto"></div>
 
-                <Accordion type="single" collapsible>
+                <Accordion type="single" collapsible className="md:mt-0 mt-[20px]">
                     {cards.map((card: { id: number, triggerText: string, heading: string, bulletList: string[], note: string, price: string, btnText: string, imgUrl: string, skeletonImgUrl: string }) => (
                         <AccordionItem key={card.id} value={card.triggerText} className="border-b-2 border-black">
                             <AccordionTrigger><h4>{card.triggerText}</h4></AccordionTrigger>
@@ -23,7 +23,7 @@ export default function Prices() {
                                 <div className="flex md:flex-row flex-col justify-between md:items-start items-center">
                                     <Image
                                         src={card.imgUrl}
-                                        alt="Picture of the author"
+                                        alt={card.heading}
                                         width={600}
                                         height={600}
                                         className="rounded-[60px]"

@@ -220,3 +220,80 @@ export const pricesSectionCards = [
         skeletonImgUrl: "/assets/pricesSection/skeletons/prices-skeleton-kitchen.png",
     },
 ];
+
+export const gallerySectionCards = [
+    {
+        id: 1,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-1.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-1.png",
+    },
+    {
+        id: 2,
+        title: "Kitchen Renovations",
+        imgUrl: "/assets/gallerySection/gallery-2.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-2.png",
+    },
+    {
+        id: 3,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-3.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-3.png",
+    },
+    {
+        id: 4,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-4.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-4.png",
+    },
+    {
+        id: 5,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-5.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-5.png",
+    },
+    {
+        id: 6,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-6.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-6.png",
+    },
+    {
+        id: 7,
+        title: "Kitchen Renovations",
+        imgUrl: "/assets/gallerySection/gallery-7.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-7.png",
+    },
+    {
+        id: 8,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-8.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-8.png",
+    },
+    {
+        id: 9,
+        title: "Kitchen Renovations",
+        imgUrl: "/assets/gallerySection/gallery-9.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-9.png",
+    },
+    {
+        id: 10,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-10.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-10.png",
+    },
+    {
+        id: 11,
+        title: "Basement Renovations",
+        imgUrl: "/assets/gallerySection/gallery-11.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-11.png",
+    },
+    {
+        id: 12,
+        title: "Bathroom Renovations",
+        imgUrl: "/assets/gallerySection/gallery-12.png",
+        skeletonImgUrl: "/assets/gallerySection/skeleton/gallery-skeleton-12.png",
+    },
+
+
+];
