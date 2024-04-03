@@ -3,11 +3,15 @@ import Image from "next/image"
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export default function Gallery() {
 
@@ -38,7 +42,7 @@ export default function Gallery() {
                                     </div>
                                 </DialogTrigger>
                                 <DialogContent className="flex justify-center items-start w-[70%] max-w-[900px]  bg-root-pattern rounded-[0px]">
-                                    <div className="w-[500px] h-[80vh] max-h-[800px] max- relative">
+                                    <div className="w-[500px] h-[80vh] max-h-[800px] relative">
                                         {/* When use fill prop it changes position to absolut! */}
                                         <Image
                                             src={card.imgUrl}
@@ -57,7 +61,30 @@ export default function Gallery() {
                 </div>
 
                 {/* For mobile version */}
-
+                <div className="md:hidden flex justify-center items-center mt-[50px]">
+                    <Carousel className="w-full max-w-xs">
+                        <CarouselContent>
+                            {cards.map((card: { id: number, title: string, imgUrl: string, skeletonImgUrl: string }) => (
+                                <CarouselItem key={card.id}>
+                                    <div className="w-full h-[500px] relative">
+                                        {/* When use fill prop it changes position to absolut! */}
+                                        <Image
+                                            src={card.imgUrl}
+                                            alt={card.title}
+                                            fill
+                                            sizes="(min-width: 200px)"
+                                            className="rounded-[30px] object-cover object-center"
+                                            placeholder="blur"
+                                            blurDataURL={card.skeletonImgUrl}
+                                        />
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+                </div>
             </div>
         </section>
     )
