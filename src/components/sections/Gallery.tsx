@@ -1,5 +1,14 @@
 import { gallerySectionCards as cards } from "@/constants"
 import Image from "next/image"
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+
 export default function Gallery() {
 
     return (
@@ -8,24 +17,47 @@ export default function Gallery() {
                 <h2 className=" text-center mb-1">Our Portfolio: Visual Journey</h2>
                 <div className="bg-gold w-[200px] h-[4px] mx-auto"></div>
 
-                <div className="flex justify-center items-center">
+                {/* For laptop version */}
+                <div className="md:flex hidden justify-center items-center">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-4 mt-[60px]">
                         {cards.map((card: { id: number, title: string, imgUrl: string, skeletonImgUrl: string }) => (
-                            <div key={card.id} className="w-[300px] h-[400px] relative">
-                                {/* When use fill prop it changes position to absolut! */}
-                                <Image
-                                    src={card.imgUrl}
-                                    alt={card.title}
-                                    fill
-                                    className="rounded-[30px] object-cover object-center"
-                                    placeholder="blur"
-                                    blurDataURL={card.skeletonImgUrl}
-                                />
-                                <div className="md:block hidden absolute inset-0 bg-black opacity-40 hover:opacity-0 transition-opacity duration-200 rounded-[30px]"></div>
-                            </div>
+                            <Dialog>
+                                <DialogTrigger>
+                                    <div key={card.id} className="w-[300px] h-[400px] relative">
+                                        {/* When use fill prop it changes position to absolut! */}
+                                        <Image
+                                            src={card.imgUrl}
+                                            alt={card.title}
+                                            fill
+                                            sizes="(min-width: 500px)"
+                                            className="rounded-[30px] object-cover object-center"
+                                            placeholder="blur"
+                                            blurDataURL={card.skeletonImgUrl}
+                                        />
+                                        <div className="md:block hidden absolute inset-0 bg-black opacity-40 hover:opacity-0 transition-opacity duration-200 rounded-[30px]"></div>
+                                    </div>
+                                </DialogTrigger>
+                                <DialogContent className="flex justify-center items-start w-[70%] max-w-[900px]  bg-root-pattern rounded-[0px]">
+                                    <div className="w-[500px] h-[80vh] max-h-[800px] max- relative">
+                                        {/* When use fill prop it changes position to absolut! */}
+                                        <Image
+                                            src={card.imgUrl}
+                                            alt={card.title}
+                                            fill
+                                            sizes="(min-width: 500px)"
+                                            className="rounded-[30px] object-cover object-center"
+                                            placeholder="blur"
+                                            blurDataURL={card.skeletonImgUrl}
+                                        />
+                                    </div>
+                                </DialogContent>
+                            </Dialog>
                         ))}
                     </div>
                 </div>
+
+                {/* For mobile version */}
+
             </div>
         </section>
     )
