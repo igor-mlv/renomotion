@@ -78,6 +78,10 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        bounce: {
+          '0%, 100%': { transform: 'translateY(-1%)' },
+          '50%': { transform: 'none' },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

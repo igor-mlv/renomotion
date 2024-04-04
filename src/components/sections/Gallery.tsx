@@ -10,7 +10,6 @@ import {
     CarouselContent,
     CarouselItem,
     CarouselNext,
-    CarouselPrevious,
 } from "@/components/ui/carousel"
 
 
@@ -26,7 +25,7 @@ export default function Gallery() {
                 <div className="md:flex hidden justify-center items-center">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-4 mt-[60px]">
                         {cards.map((card: { id: number, title: string, imgUrl: string, skeletonImgUrl: string }) => (
-                            <Dialog>
+                            <Dialog key={card.id}>
                                 <DialogTrigger>
                                     <div key={card.id} className="w-[300px] h-[400px] relative">
                                         {/* When use fill prop it changes position to absolut! */}
@@ -43,7 +42,7 @@ export default function Gallery() {
                                     </div>
                                 </DialogTrigger>
                                 <DialogContent className="flex justify-center items-start w-[70%] max-w-[900px]  bg-root-pattern rounded-[0px]">
-                                    <div className="w-[500px] h-[80vh] max-h-[800px] relative">
+                                    <div key={card.id} className="w-[500px] h-[80vh] max-h-[800px] relative">
                                         {/* When use fill prop it changes position to absolut! */}
                                         <Image
                                             src={card.imgUrl}

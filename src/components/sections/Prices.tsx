@@ -41,7 +41,7 @@ export default function Prices() {
                                         <p className="border-solid border-gold border-[1px] md:px-[10px] px-[5px] py-[20px] md:text-left text-center">{card.note}</p>
                                         <div className="flex md:flex-row flex-col justify-around items-center mt-[40px]">
                                             <p>{card.price}</p>
-                                            <Button variant="ghost" className="w-[150px] rounded-[20px] border-solid border-[1px] border-black hover:bg-inherit md:mt-[0px] mt-[10px]">
+                                            <Button variant="ghost" className="w-[150px] rounded-[20px] border-solid border-[1px] border-black hover:bg-inherit md:mt-[0px] mt-[10px] md:mb-0 mb-[25px]">
                                                 <span className="btnText hover:text-gold">{card.btnText}</span>
                                             </Button>
                                         </div>

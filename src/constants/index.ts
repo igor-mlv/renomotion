@@ -300,3 +300,27 @@ export const gallerySectionCards = [
 
 
 ];
+
+export const testimonialsSectionCards = [
+    {
+        id: 1,
+        name: "Pablo",
+        rewiev: "We are very pleased with Dimitri’s work. He did a wonderful job installing our ceramic kitchen flooring. He pays attention to detail and completed the work in a timely manner. Very professional service!",
+        date: "2 mounts ago",
+        imgUrl: "/assets/testimonialsSection/testimonials-1.png",
+    },
+    {
+        id: 2,
+        name: "Sylvie",
+        rewiev: "Dmitriy was extremely easy to work with in planning to redo my basement flooring. He listened to my concerns and addressed each of them. The work was well done and he strived to complete the work on time. Dmitriy did his very best to make the reno stress free.",
+        date: "2 mounts ago",
+        imgUrl: "/assets/testimonialsSection/testimonials-2.png",
+    },
+    {
+        id: 3,
+        name: "Daniel",
+        rewiev: "Working with the Renomotion team to complete our basement was an absolute pleasure. Dmitriy provided invaluable guidance through various design options, ensuring we were fully satisfied with our choices. The initial cost and completion timeline estimates were remarkably accurate, and any adjustments to the budget were transparently discussed. We experienced no surprises or unexpected delays throughout the project. The team's attention to detail and commitment to quality craftsmanship were evident in every aspect of their work. Without a doubt, we will be returning customers and wholeheartedly recommend Renomotion for anyone seeking exceptional service and results.",
+        date: "a mount ago",
+        imgUrl: "/assets/testimonialsSection/testimonials-3.png",
+    },
+];
