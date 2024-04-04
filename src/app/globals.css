@@ -28,6 +28,10 @@ h5 {
   @apply font-montserrat font-bold md:text-[1rem] text-[0.8rem] leading-[2.5rem] text-black text-center
 }
 
+h6 {
+  @apply font-montserrat font-bold md:text-[1rem] text-[0.7rem] leading-[1rem] text-black text-center
+}
+
 p {
   @apply font-montserrat font-normal md:text-[1.3rem] text-[1.5rem] leading-[2rem] text-black
 }

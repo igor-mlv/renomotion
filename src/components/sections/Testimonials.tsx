@@ -22,7 +22,6 @@ export default function Testimonials() {
                                         <AvatarImage src={card.imgUrl} />
                                         <AvatarFallback>CN</AvatarFallback>
                                     </Avatar>
-
                                     <h5 className="pl-[10px]">{card.name}</h5>
                                 </div>
                                 <div className="flex px-[20px] justify-between ">
@@ -33,7 +32,6 @@ export default function Testimonials() {
                                     </div>
                                     <p className=" opacity-30">{card.date}</p>
                                 </div>
-
                                 <div className="px-[20px] pt-[10px] pb-[20px]">
                                     <p className="text-ellipsis overflow-hidden">{card.rewiev}</p>
                                 </div>

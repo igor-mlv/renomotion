@@ -1,4 +1,5 @@
 import About from "@/components/sections/About";
+import ContactUs from "@/components/sections/ContactUs";
 import Gallery from "@/components/sections/Gallery";
 import Hero from "@/components/sections/Hero";
 import NavBar from "@/components/sections/NavBar"
@@ -16,6 +17,7 @@ export default function Home() {
       <Prices />
       <Gallery />
       <Testimonials />
+      <ContactUs />
 
 
 
