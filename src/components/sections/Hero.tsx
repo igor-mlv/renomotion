@@ -8,7 +8,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import { Button } from "../ui/button"
+import Button from "@/components/ui/ButtonToContactDialog"
 
 export default function Hero() {
     return (
@@ -21,9 +21,7 @@ export default function Hero() {
                                 <div className="flex md:flex-row flex-col-reverse justify-between items-center min-h-[450px]">
                                     <div className="flex flex-col justify-around h-[200px] md:items-start items-center">
                                         <h1>{card.heading}</h1>
-                                        <Button variant="ghost" className="w-[150px] rounded-[20px] border-solid border-[1px] border-black hover:bg-inherit">
-                                            <span className="btnText hover:text-gold">{card.btnText}</span>
-                                        </Button>
+                                        <Button>{card.btnText}</Button>
                                     </div>
                                     <Image
                                         src={card.imgUrl}
