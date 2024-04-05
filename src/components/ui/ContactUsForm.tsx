@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormMessage,
@@ -21,6 +20,7 @@ import Lottie from 'lottie-react';
 import animationData from "@/lottie/submit-animation.json"
 
 const formSchema = z.object({
+    access_key: z.string(),
     fullName:
         z.string()
             .min(2, { message: 'Name must be at least 2 characters long' })
@@ -47,6 +47,7 @@ export default function ContactUsForm() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
+            access_key: "7a53d9d5-482b-44af-b246-bbfeafb53bf5",
             fullName: "",
             email: "",
             phoneNumber: "",
@@ -57,15 +58,11 @@ export default function ContactUsForm() {
 
     // 2. Define a submit handler.
     async function onSubmit(data: z.infer<typeof formSchema>) {
-        // Do something with the form values.
         const formData = new FormData();
 
-        formData.append("access_key", "7a53d9d5-482b-44af-b246-bbfeafb53bf5");
-        formData.append("fullName", data.fullName);
-        formData.append("email", data.email);
-        formData.append("phoneNumber", data.phoneNumber);
-        formData.append("address", data.address);
-        formData.append("renovationType", data.renovationType);
+        Object.keys(data).forEach((key) => {
+            formData.append(key, data[key as keyof typeof data]);
+        });
 
         const res = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
@@ -74,7 +71,6 @@ export default function ContactUsForm() {
 
         if (res.success) {
             setFormSubmitted(true);
-            console.log("Success", res);
         } else {
             console.log("Error", res);
         }
@@ -97,7 +93,12 @@ export default function ContactUsForm() {
                 :
                 (
                     <Form {...form} >
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 px-[20px] py-[40px]" action="https://api.web3forms.com/submit" method="POST" encType="multipart/form-data">
+                        <form
+                            onSubmit={form.handleSubmit(onSubmit)}
+                            action="https://api.web3forms.com/submit"
+                            method="POST"
+                            encType="multipart/form-data"
+                            className="space-y-6 px-[20px] py-[40px]">
 
                             {formFieldsData.map((fieldData: FieldData) => (
                                 <FormField
