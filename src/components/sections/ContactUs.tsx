@@ -1,4 +1,3 @@
-import Image from "next/image"
 import ContactUsForm from "../ui/ContactUsForm"
 export default function ContactUs() {
     return (
@@ -9,15 +8,22 @@ export default function ContactUs() {
                 </h2>
 
                 <div className="flex  md:flex-row flex-col justify-around items-center mt-[80px] ">
-                    <Image
-                        width={500}
-                        height={500}
-                        src="/assets/contactSection/contact-powder.png"
-                        alt="Bathroom renovation"
-                        className="rounded-[30px] object-cover object-center md:block hidden"
-                        placeholder="blur"
-                        blurDataURL="/assets/contactSection/skeleton/contact-skeleton-powder.png"
-                    />
+                    <div className="flex flex-col justify-around items-center max-w-[500px] min-h-[300px]">
+                        <div className="flex flex-col justify-center items-center space-y-4">
+                            <p className="text-center ">Do you have questions about our services or want to schedule a consultation?</p>
+                            <p className="text-center ">We'd love to hear from you!</p>
+                            <p className="text-center ">Feel free to reach out to us using the contact information provided below:</p>
+                        </div>
+
+                        <div className="flex justify-between items-center pt-[40px]">
+                            <img src="/assets/telephone.svg" alt="phone number" className="w-[47px] h-auto " />
+                            <a href="tel:+16132226865" className="pl-[20px]"><p>+1(613)222-6865</p></a>
+                        </div>
+                        <div className="flex justify-between items-center pt-[20px] md:pb-0 pb-[50px]">
+                            <img src="/assets/mail.svg" alt="email" className="w-[50px] h-auto md:block hidden" />
+                            <a href="mailto:renomotion.inc@gmail.com" className="md:pl-[20px]"><p>renomotion.inc@gmail.com</p></a>
+                        </div>
+                    </div>
                     <ContactUsForm />
                 </div>
             </div>
