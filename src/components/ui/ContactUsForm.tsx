@@ -1,6 +1,7 @@
 "use client"
+import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { set, useForm } from "react-hook-form"
 import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -10,11 +11,14 @@ import {
     FormDescription,
     FormField,
     FormItem,
-    FormLabel,
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { formFieldsData } from "@/constants"
+
+import Lottie from 'lottie-react';
+import animationData from "@/lottie/submit-animation.json"
 
 const formSchema = z.object({
     fullName:
@@ -38,6 +42,7 @@ const formSchema = z.object({
 })
 
 export default function ContactUsForm() {
+    const [formSubmitted, setFormSubmitted] = useState(false);
     // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -51,87 +56,90 @@ export default function ContactUsForm() {
     })
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
+    async function onSubmit(data: z.infer<typeof formSchema>) {
         // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+        const formData = new FormData();
+
+        formData.append("access_key", "7a53d9d5-482b-44af-b246-bbfeafb53bf5");
+        formData.append("fullName", data.fullName);
+        formData.append("email", data.email);
+        formData.append("phoneNumber", data.phoneNumber);
+        formData.append("address", data.address);
+        formData.append("renovationType", data.renovationType);
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+        }).then((res) => res.json());
+
+        if (res.success) {
+            setFormSubmitted(true);
+            console.log("Success", res);
+        } else {
+            console.log("Error", res);
+        }
+        console.log(data)
     }
+    interface FieldData {
+        id: number;
+        nameOfField: string;
+        placeholder: string;
+    }
+
     return (
         <div className="bg-neutral-50/50 shadow-lg w-[370px] rounded-[40px]">
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 px-[20px] py-[40px] ">
-                    <FormField
-                        control={form.control}
-                        name="fullName"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl >
-                                    <Input className=" focus-visible:ring-gold h-[50px] text-[1.1rem]" placeholder="Full Name*" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
 
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl >
-                                    <Input className=" focus-visible:ring-gold h-[50px] text-[1.1rem]" placeholder="Email*" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
+            {formSubmitted ?
+                (<div className="h-[540px] flex justify-center items-center bg-white rounded-[40px]">
+                    <Lottie animationData={animationData} loop={false}
                     />
+                </div>)
+                :
+                (
+                    <Form {...form} >
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 px-[20px] py-[40px]" action="https://api.web3forms.com/submit" method="POST" encType="multipart/form-data">
 
-                    <FormField
-                        control={form.control}
-                        name="phoneNumber"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl >
-                                    <Input className=" focus-visible:ring-gold h-[50px] text-[1.1rem]" placeholder="Phone number*" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                            {formFieldsData.map((fieldData: FieldData) => (
+                                <FormField
+                                    key={fieldData.id}
+                                    control={form.control}
+                                    name={fieldData.nameOfField as "fullName" | "email" | "phoneNumber" | "address" | "renovationType"}
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormControl>
+                                                <Input
+                                                    className="focus-visible:ring-gold h-[50px] text-[1.1rem]"
+                                                    placeholder={fieldData.placeholder}
+                                                    {...field} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                            ))}
 
-                    <FormField
-                        control={form.control}
-                        name="address"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl >
-                                    <Input className=" focus-visible:ring-gold h-[50px] text-[1.1rem]" placeholder="Address" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+                            <FormField
+                                control={form.control}
+                                name="renovationType"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormControl >
+                                            <Textarea className=" focus-visible:ring-gold h-[100px] text-[1.1rem] placeholder:text-wrap placeholder:items-start placeholder:flex placeholder:justify-center" placeholder="Type of Renovation (e.g., Bathroom, Kitchen, Basement). Brief Description of Your Renovation Project" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
 
-                    <FormField
-                        control={form.control}
-                        name="renovationType"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl >
-                                    <Textarea className=" focus-visible:ring-gold h-[100px] text-[1.1rem] placeholder:text-wrap placeholder:items-start placeholder:flex placeholder:justify-center" placeholder="Type of Renovation (e.g., Bathroom, Kitchen, Basement). Brief Description of Your Renovation Project" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <Button
-                        type="submit"
-                        variant="ghost"
-                        className="w-[150px] rounded-[20px] border-solid border-[1px] border-black hover:bg-inherit md:mt-[0px] mt-[10px] md:mb-0 mb-[25px] btnText hover:text-gold">
-                        Submit
-                    </Button>
-                </form>
-            </Form>
+                            <Button
+                                type="submit"
+                                variant="ghost"
+                                className="w-[150px] rounded-[20px] border-solid border-[1px] border-black hover:bg-inherit md:mt-[0px] mt-[10px] md:mb-0 mb-[25px] btnText hover:text-gold">
+                                Submit
+                            </Button>
+                        </form>
+                    </Form>
+                )}
         </div>
     )
 }

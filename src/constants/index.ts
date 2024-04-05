@@ -324,3 +324,26 @@ export const testimonialsSectionCards = [
         imgUrl: "/assets/testimonialsSection/testimonials-3.png",
     },
 ];
+
+export const formFieldsData = [
+    {
+        id: 1,
+        nameOfField: "fullName",
+        placeholder: "Full Name*",
+    },
+    {
+        id: 2,
+        nameOfField: "email",
+        placeholder: "Email*",
+    },
+    {
+        id: 3,
+        nameOfField: "phoneNumber",
+        placeholder: "Phone number*",
+    },
+    {
+        id: 4,
+        nameOfField: "address",
+        placeholder: "Address",
+    },
+];
