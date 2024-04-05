@@ -5,6 +5,7 @@ import {
     AvatarImage,
 } from "@/components/ui/avatar"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import Image from 'next/image';
 
 export default function Testimonials() {
     return (
@@ -27,7 +28,14 @@ export default function Testimonials() {
                                 <div className="flex px-[20px] justify-between ">
                                     <div className="flex">
                                         {Array(5).fill(null).map((_, index) => (
-                                            <img key={index} src="/assets/star.svg" alt="Star" />
+
+                                            <Image
+                                                key={index}
+                                                src="/assets/star.svg"
+                                                alt="Star"
+                                                width={25}
+                                                height={50}
+                                            />
                                         ))}
                                     </div>
                                     <p className=" opacity-30">{card.date}</p>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 export default function About() {
     return (
         <footer id="footer" className=" flex justify-center items-center pt-[100px]">
@@ -9,7 +10,14 @@ export default function About() {
                             <a href="mailto:renomotion.inc@gmail.com"><p>renomotion.inc@gmail.com</p></a>
                         </div>
 
-                        <img src="/assets/logo.svg" alt="logo" className="w-[370px] h-auto mx-[30px]" />
+                        <Image
+                            src="/assets/logo.svg"
+                            alt="logo"
+                            width={370}
+                            height={100}
+                            className="mx-[30px] h-auto"
+
+                        />
 
                         <p className="text-center mx-[30px] ">475 Elgin Street<br />Ottawa ON K2P 2E6<br />Canada</p>
                     </div>

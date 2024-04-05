@@ -39,13 +39,20 @@ export default function Hero() {
                     </CarouselContent>
                     <div className="flex justify-between items-center md:w-[15rem] w-full">
                         <CarouselPrevious variant="link" className="h-10 w-[75px] rounded-full static" >
-                            <img
+                            <Image
                                 src="/assets/arrow-left.svg"
+                                alt="Arrow Left"
+                                width={75}
+                                height={50}
+                                className="h-auto"
                             />
                         </CarouselPrevious>
                         <CarouselNext variant="link" className="h-10 w-[75px] rounded-full static">
-                            <img
+                            <Image
                                 src="/assets/arrow-right.svg"
+                                alt="Arrow Right"
+                                width={75}
+                                height={50}
                             />
                         </CarouselNext>
                     </div>

@@ -119,7 +119,7 @@ export default function ContactUsForm() {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl >
-                                            <Textarea className=" focus-visible:ring-gold h-[100px] text-[1.1rem] placeholder:text-wrap placeholder:items-start placeholder:flex placeholder:justify-center" placeholder="Type of Renovation (e.g., Bathroom, Kitchen, Basement). Brief Description of Your Renovation Project" {...field} />
+                                            <Textarea className=" focus-visible:ring-gold h-[120px] text-[1.1rem] placeholder:text-wrap placeholder:items-start placeholder:flex placeholder:justify-center" placeholder="Type of Renovation (e.g., Bathroom, Kitchen, Basement). Brief Description of Your Renovation Project" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

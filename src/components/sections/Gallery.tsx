@@ -82,7 +82,13 @@ export default function Gallery() {
                             ))}
                         </CarouselContent>
                         <CarouselNext variant="link" className="h-10 w-[75px] rounded-full rotate-0 pt-[100px]">
-                            <img src="/assets/arrow-down.svg" className="animate-bounce" alt="Arrow Down" />
+                            <Image
+                                src="/assets/arrow-down.svg"
+                                alt="Arrow Down"
+                                width={75} // replace with actual width
+                                height={50} // replace with actual height
+                                className="animate-bounce"
+                            />
                         </CarouselNext>
                     </Carousel>
                 </div>

@@ -1,5 +1,5 @@
 import { servicesSectionCards as cards } from "@/constants"
-
+import Image from "next/image"
 export default function Services() {
     return (
         <section id="services" className=" flex justify-center items-center pt-[100px]">
@@ -10,10 +10,13 @@ export default function Services() {
                 <div className="flex md:flex-row flex-col justify-between md:items-start items-center mt-[50px] ">
                     {cards.map((card: { id: number, heading: string, description: string, imgUrl: string }) => (
                         <div key={card.id} className="flex flex-col items-center pb-[100px]">
-                            <img
+
+                            <Image
                                 src={card.imgUrl}
-                                className="w-[350px] h-[450px] object-cover rounded-[40px]"
-                                alt="Bathroom Renovations"
+                                alt="hamburger menu"
+                                width={350}
+                                height={450}
+                                className="object-cover rounded-[40px] h-[450px]"
                             />
 
                             <div className="mt-[30px] w-auto max-w-[350px]">
