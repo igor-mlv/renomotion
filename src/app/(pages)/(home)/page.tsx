@@ -6,6 +6,7 @@ import NavBar from "@/components/sections/NavBar"
 import Prices from "@/components/sections/Prices";
 import Services from "@/components/sections/Services";
 import Testimonials from "@/components/sections/Testimonials";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -18,13 +19,7 @@ export default function Home() {
       <Gallery />
       <Testimonials />
       <ContactUs />
-
-
-
-      <section id="footer" className="h-[2000px] pt-[5rem]">
-        <h1>footer</h1>
-      </section>
-
+      <Footer />
     </div >
   );
 }
