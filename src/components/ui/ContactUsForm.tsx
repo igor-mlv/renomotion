@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod"
-import { set, useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -56,7 +56,7 @@ export default function ContactUsForm() {
         },
     })
 
-    // 2. Define a submit handler.
+    // whaen the form is submitted data send to the api and admin gets email with the data
     async function onSubmit(data: z.infer<typeof formSchema>) {
         const formData = new FormData();
 
@@ -74,12 +74,6 @@ export default function ContactUsForm() {
         } else {
             console.log("Error", res);
         }
-        console.log(data)
-    }
-    interface FieldData {
-        id: number;
-        nameOfField: string;
-        placeholder: string;
     }
 
     return (
@@ -100,7 +94,7 @@ export default function ContactUsForm() {
                             encType="multipart/form-data"
                             className="space-y-6 px-[20px] py-[40px]">
 
-                            {formFieldsData.map((fieldData: FieldData) => (
+                            {formFieldsData.map((fieldData: { id: number; nameOfField: string; placeholder: string; }) => (
                                 <FormField
                                     key={fieldData.id}
                                     control={form.control}
